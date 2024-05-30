@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scinetific Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+    <div class="calculator" id="calculatedis">
+
+        <div class="more" id="morebutton">
+          <div class="changediv">
+          <div class="clbtn" onclick="hidemore()">Calculator</div>
+         
+          <div class="conbtn" onclick="showmore()"> Converter</div>
+        </div>
+
+          <div><i class="fa-solid fa-group-arrows-rotate rotate" onclick="showtrg()"></i>
+            <i class="fa-solid fa-arrows-spin rotaterev" onclick="hidetrg()"></i>
+          </div>
+  
+        </div>
+        
+       
+        <div class="display">
+           <input
+          type="text" 
+            id="inputbox"
+          
+            placeholder="0"
+             disabled 
+          
+          
+        />
+        </div>
+
+        <div class="btns">
+
+
+            <div class="row2 row1 ">
+
+              <div class="hd">
+               <button type="button" onclick="sin()" class="btnsm hide ">sin</button>
+                <button type="button" onclick="cos()" class="btnsm hide">cos</button>
+                <button type="button" onclick="tan()" class="btnsm hide">tan</button></div>
+
+                <div class="sd">
+                <button type="button" onclick="asin()" class="btnsm hide hide2">sin<sup>-1</sup></button>
+                <button type="button" onclick="acos()" class="btnsm hide hide2">cos<sup>-1</sup></button>
+                 <button type="button" onclick="atan()"  class="btnsm hide hide2">tan<sup>-1</sup></button> </div>
+
+               <div class="divbtn">
+                <button type="button" onclick="logln()" class="btnsm hide">ln</button>
+                <button type="button"  onclick="cube()"  class="btnsm hide">x<sup>3</sup></button></div>
+              
+              </div>
+
+              <div class="row2 ">
+               
+                <button type="button" onclick="log()" class="btnsm ">log</button>
+              
+                
+                <button type="button"  onclick="x2()"  class="btnsm  ">x<sup>2</sup></button>
+               
+                
+                <button type="button" onclick="dis('(')" class="btnsm  ">(</button>
+                <button type="button" onclick="dis(')')" class="btnsm">)</button>
+                <button type="button" onclick="inv()" class="btnsm  ">inv</button>
+              
+              </div>
+        
+              <div class="row2 ">
+                <button type="button" onclick="fact()" class="btnsm ">!</button>
+                <button type="button" onclick="cl()" class="btnsm opr1">AC</button>
+                <button type="button"  onclick="per()"  class="btnsm opr">%</button>
+                <button type="button" onclick="del()" class="btnsm opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+                <button type="button"    class="btnsm opr">/</button>
+              </div>
+        
+              <div class="row2">
+                <button type="button" onclick="x3()" class="btnsm ">∛</button>
+              
+                <button type="button" onclick="dis('7')"   class="btnsm">7</button>
+                <button type="button"   onclick="dis('8')"   class=" btnsm">8</button>
+                <button type="button"  onclick="dis('9')"   class="btnsm">9</button>
+                <button type="button"   onclick="dis('*')"   class="btnsm opr">*</button>
+
+               
+          </div>
+        
+             
+              
+              <div class="row2">
+               
+                <button type="button" onclick="root()" class="btnsm  hide">√</button>
+                <button type="button"   onclick="dis('4')"  class="btnsm">4</button>
+                <button type="button"  onclick="dis('5')"    class="btnsm">5</button>
+                <button type="button"  onclick="dis('6')"   class="btnsm">6</button>
+               
+                <button type="button"   onclick="dis('-')"  class="btnsm opr">-</button>
+                
+              </div>
+        
+
+              <div class="row2">
+                <button type="button" onclick="pi()" class="btnsm  hide">π</button>
+                <button type="button"  onclick="dis('1')"    class="btnsm">1</button>
+                <button type="button"  onclick="dis('2')"    class="btnsm">2</button>
+                <button type="button"  onclick="dis('3')"   class="btnsm">3</button>
+                 <button type="button"   onclick="dis('+')"  class="btnsm opr">+</button>
+                 
+               </div>
+         
+               <div class="row2">
+                 <button type="button" onclick="e()"  class="btnsm hide">e</button>
+                 <button type="button"   onclick="dis('00')"  class="btnsm opr ">00</button>
+                 <button type="button" onclick="dis('0')"  class="btnsm">0</button>
+                 <button type="button"  onclick="dis('.')"  class="btnsm opr">.</button>
+                 <button type="button"  onclick="solve()"  class="btnsm opr eql">=</button>
+                  
+               </div>
+             
+              </div>
+                   
+      
+
+       <div class="s-nav">
+
+        <div class="row">
+          <button type="button" onclick="cl()" class="btn opr1">AC</button>
+          
+          <button type="button" onclick="del()" class="btn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+          <button type="button"  onclick="per()"  class="btn ">%</button>
+          <button type="button"  onclick="dis('/')"   class="btn opr">/</button>
+          
+          
+        </div>
+             
+
+          <div class="row">
+            <button type="button" onclick="dis('7')"   class="btn">7</button>
+            <button type="button"   onclick="dis('8')"   class=" btn">8</button>
+            <button type="button"  onclick="dis('9')"   class="btn">9</button>
+            <button type="button"   onclick="dis('*')"   class="btn opr">*</button>
+          </div>
+
+
+          <div class="row">
+
+            <button type="button"   onclick="dis('4')"  class="btn">4</button>
+            <button type="button"  onclick="dis('5')"    class="btn">5</button>
+            <button type="button"  onclick="dis('6')"   class="btn">6</button>
+           
+            <button type="button"   onclick="dis('-')"  class="btn opr">-</button>
+            
+              
+              
+            </div>
+      
+           
+      
+
+
+            <div class="row">
+             
+              <button type="button"  onclick="dis('1')"    class="btn">1</button>
+                <button type="button"  onclick="dis('2')"    class="btn">2</button>
+                <button type="button"  onclick="dis('3')"   class="btn">3</button>
+                 <button type="button"   onclick="dis('+')"  class="btn opr">+</button>
+                 
+           
+              </div>
+      
+            <div class="row">
+             
+              <button type="button"   onclick="dis('00')"  class="btn opr ">00</button>
+                 <button type="button" onclick="dis('0')"  class="btn">0</button>
+                 <button type="button"  onclick="dis('.')"  class="btn opr">.</button>
+                 <button type="button"  onclick="solve()"  class="btn opr eql">=</button>
+                
+            </div>
+            
+         
+            </div>
+                 
+      
+
+      </div>
+      </div>
+
+     <!-- converter functions -->
+    <div class="morefunction " id="morefunc">
+      <div class="more" id="morebutton">
+       
+        <div class="conbtn"  onclick="hidemore()">Calculator</div>
+        <!-- <i class="fa-solid fa-square-plus icon" onclick="showmore()"></i> -->
+        <div class="clbtn" onclick="showmore()"> Converter</div>
+     
+        </div>
+    
+      <!-- <i class="fa-solid fa-circle-xmark close" id="closebtn" ></i> -->
+
+     <h1 class="morehead"> Unit Converter</h1>
+
+      <div class="displaymore">
+
+      <div class="plmore">
+
+        <div class="ln-con con" onclick="showcurr()">
+          <div class="ln" >
+            <i class="fa-solid fa-cent-sign lengthicon"></i>
+            <div class="length"> Currency</div>
+          </div>
+       </div>
+      
+    
+      <div class="sip-con con" onclick="showtemp()">
+                <div class="ln">
+                  <i class="fa-solid fa-temperature-full lengthicon"></i>
+                  <div class=" length"> Temperature</div>
+               
+      </div>
+      </div>
+    
+      <div class="emi-con con" onclick="showarea()">
+    
+        <div class="ln">
+          <i class="fa-solid fa-chart-area lengthicon"></i>
+          <div class=" length"> Area</div>
+        </div>
+    
+    </div>
+    </div>
+    
+
+    <div class="plmore">
+
+      <div class="ln-con con" onclick="showtime()">
+        <div class="ln" >
+          <i class="fa-solid fa-clock lenghticon"></i>
+          <div class="length"> Time</div>
+        </div>
+     </div>
+    
+  
+    <div class="sip-con con" onclick="showweight()">
+              <div class="ln">
+                <i class="fa-solid fa-weight-hanging lenghticon"></i>
+                <div class="spi-heading length"> Weight</div>
+             
+    </div>
+    </div>
+  
+    <div class="emi-con con" onclick="showvol()">
+  
+      <div class="ln">
+        <i class="fa-solid fa-cube lenghticon"></i>
+        <div class="spi-heading length"> Volume</div>
+      </div>
+  
+  </div>
+  </div>
+  
+
+  <div class="plmore">
+    <div class="ln-con con" onclick="showln()">
+      <div class="ln " >
+
+         <i class="fa-solid fa-ruler lengthicon" ></i> 
+        <!-- <button class="lnbtn">Length</button> -->
+        <div class="length"> Length</div>
+      </div>
+   </div>
+  
+
+  <div class="sip-con con" onclick="showpw()">
+            <div class="ln">
+              <i class="fa-brands fa-superpowers lenghticon"></i>
+              <!-- <button class="lnbtn">SPI</button> -->
+              <div class="spi-heading length"> Power</div>
+           
+  </div>
+  </div>
+
+  <div class="emi-con con" onclick="showpr()">
+
+    <div class="ln">
+      <i class="fa-brands fa-wpressr lenghticon"></i>
+      <!-- <button class="lnbtn">EMI</button> -->
+      <div class="spi-heading length"> Pressure</div>
+    </div>
+
+</div>
+</div>
+
+
+    
+      <div class="plmore">
+    <div class="ln-con con" onclick="showdiscount()">
+      <div class="ln " >
+
+        <i class="fa-solid fa-tag lenghticon"></i>
+        <!-- <button class="lnbtn">Length</button> -->
+        <div class="length"> Discount</div>
+      </div>
+   </div>
+  
+
+  <div class="sip-con con" onclick="showsip()">
+            <div class="ln">
+              <i class="fa-brands fa-slack lengthicon "></i>
+              <!-- <button class="lnbtn">SPI</button> -->
+              <div class="spi-heading length"> SIP</div>
+           
+  </div>
+  </div>
+
+  <div class="emi-con con" onclick="showemi()">
+
+    <div class="ln">
+      <i class="fa-solid fa-house lengthicon"></i>
+      <!-- <button class="lnbtn">EMI</button> -->
+      <div class="spi-heading length"> EMI</div>
+    </div>
+
+</div>
+</div>
+ 
+</div>
+</div>
+
+<!-- Unit Converter -->
+
+<!-- Currency Converter -->
+
+<div class="currencycon unitconverter" id="currencyconverter">
+  <i class="fa-solid fa-arrow-left back" onclick="hidecurr()" id="goback" ></i>
+  
+  <div class="lc1"> 
+    <select class="currency linput1" id="inputType" >
+
+      <option>select</option>
+     
+      <input type="text" id="input_currency" class="inputval" placeholder="input">
+
+    </select>
+
+  </div>
+
+  <div class="lc1 lc2"> 
+    <select class="currency linput2" id="resultType">
+      <option>select</option>
+  
+      <input type="text" id="output_currency" class="inputval" placeholder="result" >
+
+    </select>
+
+
+  </div>
+
+  <div class="sm-num">
+
+    <div class="row">
+      <button type="button" onclick="delallcurr()"   class="btn  utbn opr1">AC</button>
+      
+      <button type="button"  onclick="delcurr()"  class="btn utbn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+      <button type="button"   onclick="sh('00')"  class="btn utbn  opr ">00</button>
+      
+    </div>
+         
+
+      <div class="row">
+        <button type="button" onclick="sh('7')"   class="btn utbn ">7</button>
+        <button type="button"   onclick="sh('8')"   class=" btn utbn ">8</button>
+        <button type="button"  onclick="sh('9')"   class="btn utbn ">9</button>
+        
+      </div>
+
+
+      <div class="row">
+
+        <button type="button"   onclick="sh('4')"  class="btn utbn ">4</button>
+        <button type="button"  onclick="sh('5')"    class="btn utbn ">5</button>
+        <button type="button"  onclick="sh('6')"   class="btn utbn ">6</button>
+       
+        </div>
+  
+        <div class="row">
+         
+          <button type="button"  onclick="sh('1')"    class="btn utbn ">1</button>
+            <button type="button"  onclick="sh('2')"    class="btn utbn ">2</button>
+            <button type="button"  onclick="sh('3')"   class="btn utbn ">3</button>
+            
+          </div>
+  
+        <div class="row">
+         
+         
+             <button type="button" onclick="sh('0')"  class="btn utbn ">0</button>
+             <button type="button"  onclick="sh('.')"  class="btn utbn  opr">.</button>
+             <button type="button"  onclick="converter()"  class="btn opr  utbn  eql">=</button>
+            
+        </div>
+      
+</div>
+ </div>
+
+<!-- Temperature Converter -->
+
+ <div class="temperturecon unitconverter" id="tempertureconverter">
+  <i class="fa-solid fa-arrow-left back" onclick="hidetemp()" id="goback" ></i>
+  
+  <div class="lc1"> 
+    <select class="linput1" id="inputTempType" >
+
+      <option value="Celsius">Celsius</option>
+      <option value="Fahrenheit">Fahrenheit</option>
+    <option value="Kelvin">Kelvin</option> 
+    
+
+      <input type="text" id="inputtemp" class="inputval" placeholder="input">
+
+    </select>
+
+  </div>
+
+  <div class="lc1 lc2"> 
+    <select class="linput2 " id="resultTempType">
+
+      <option value="Celsius">Celsius</option>
+      <option value="Fahrenheit">Fahrenheit</option>
+    <option value="Kelvin">Kelvin</option>
+
+      <input type="text" id="resulttemp"  class="inputval"  placeholder="result" >
+
+    </select>
+
+
+  </div>
+
+  <div class="sm-num">
+
+    <div class="row">
+      <button type="button" onclick="delalltem()"   class="btn  utbn opr1">AC</button>
+      
+      <button type="button" onclick="deltem()" 
+      class="btn utbn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+      <button type="button"   onclick="distem('00')"  class="btn utbn  opr ">00</button>
+      
+    </div>
+         
+
+      <div class="row">
+        <button type="button" onclick="distem('7')"   class="btn utbn ">7</button>
+        <button type="button"   onclick="distem('8')"   class=" btn utbn ">8</button>
+        <button type="button"  onclick="distem('9')"   class="btn utbn ">9</button>
+        
+      </div>
+
+
+      <div class="row">
+
+        <button type="button"   onclick="distem('4')"  class="btn utbn ">4</button>
+        <button type="button"  onclick="distem('5')"    class="btn utbn ">5</button>
+        <button type="button"  onclick="distem('6')"   class="btn utbn ">6</button>
+      
+        </div>
+  
+      
+        <div class="row">
+         
+          <button type="button"  onclick="distem('1')"    class="btn utbn ">1</button>
+            <button type="button"  onclick="distem('2')"    class="btn utbn ">2</button>
+            <button type="button"  onclick="distem('3')"   class="btn utbn ">3</button>
+            
+          </div>
+  
+        <div class="row">
+         
+             <button type="button" onclick="distem('0')"  class="btn utbn ">0</button>
+             <button type="button"  onclick="distem('.')"  class="btn utbn  opr">.</button>
+             <button type="button"  onclick="inputTemp.value = eval(inputTemp.value)"  class="btn opr  utbn  eql">=</button>
+            
+        </div>
+        
+
+</div>
+
+ </div>
+
+ <!-- Area Converter -->
+ <div class="areaconv unitconverter" id="areaconverter"> 
+  <i class="fa-solid fa-arrow-left back" onclick="hidearea()" id="goback" ></i>
+  
+  <div class="lc1"> 
+      <select class="linput1" id="fromAreaUnit" >
+
+      <option value="sqMeter">Square Meter</option>
+      <option value="sqKilometer">Square Kilometer</option>
+      <option value="sqCentimeter">Square Centimeter</option>
+      <option value="sqMillimeter">Square Millimeter</option>
+      <option value="acre">Acre</option>
+      <option value="hectare">Hectare</option>
+      <option value="sqMile">Square Mile</option>
+      <option value="sqYard">Square Yard</option>
+      <option value="sqFoot">Square Foot</option>
+      <option value="sqInch">Square Inch</option>
+     
+      <input type="text" id="areaInput" class="inputval" placeholder="input">
+
+    </select>
+
+  </div>
+
+  <div class="lc1 lc2"> 
+    <select class="linput2 " id="toAreaUnit">
+
+      <option value="sqMeter">Square Meter</option>
+      <option value="sqKilometer">Square Kilometer</option>
+      <option value="sqCentimeter">Square Centimeter</option>
+      <option value="sqMillimeter">Square Millimeter</option>
+      <option value="acre">Acre</option>
+      <option value="hectare">Hectare</option>
+      <option value="sqMile">Square Mile</option>
+      <option value="sqYard">Square Yard</option>
+      <option value="sqFoot">Square Foot</option>
+      <option value="sqInch">Square Inch</option>
+      
+   
+    </select>
+    <p id="areaResult" class="inputval">result</p>
+
+    
+  </div>
+  
+  <div class="sm-num">
+
+    <div class="row">
+      <button type="button"    onclick="delallarea()"  class="btn  utbn opr1">AC</button>
+      
+      <button type="button" onclick="delarea()"  class="btn utbn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+      <button type="button"   onclick="disar('00')"  class="btn utbn  opr ">00</button>
+      
+    </div>
+         
+
+      <div class="row">
+        <button type="button" onclick="disar('7')"   class="btn utbn ">7</button>
+        <button type="button"   onclick="disar('8')"   class=" btn utbn ">8</button>
+        <button type="button"  onclick="disar('9')"   class="btn utbn ">9</button>
+        
+      </div>
+
+
+      <div class="row">
+
+        <button type="button"   onclick="disar('4')"  class="btn utbn ">4</button>
+        <button type="button"  onclick="disar('5')"    class="btn utbn ">5</button>
+        <button type="button"  onclick="disar('6')"   class="btn utbn ">6</button>
+      
+        </div>
+  
+      
+        <div class="row">
+         
+          <button type="button"  onclick="disar('1')"    class="btn utbn ">1</button>
+            <button type="button"  onclick="disar('2')"    class="btn utbn ">2</button>
+            <button type="button"  onclick="disar('3')"   class="btn utbn ">3</button>
+            
+          </div>
+  
+        <div class="row">
+         
+             <button type="button" onclick="disar('0')"  class="btn utbn ">0</button>
+             <button type="button"  onclick="disar('.')"  class="btn utbn  opr">.</button>
+             <button type="button" onclick="convertArea()"  class="btn opr  utbn  eql">=</button>
+            
+        </div>
+        
+
+</div>
+
+ </div>
+
+<!-- Time Converter -->
+ <div class="timeconv unitconverter" id="timeconverter">
+  <i class="fa-solid fa-arrow-left back" onclick="hidetime()" id="goback" ></i>
+  
+  <div class="lc1"> 
+      <select class="linput1" id="fromTimeUnit" >
+
+        <option value="second">Second</option>
+        <option value="millisecond">Millisecond</option>
+        <option value="minute">Minute</option>
+        <option value="hour">Hour</option>
+        <option value="day">Day</option>
+        <option value="week">Week</option>
+        <option value="month">Month</option>
+        <option value="year">Year</option>
+     
+      <input type="text" id="timeInput" class="inputval" placeholder="input">
+
+    </select>
+
+  </div>
+
+  <div class="lc1 lc2"> 
+    <select class="linput2 " id="toTimeUnit">
+
+      <option value="second">Second</option>
+      <option value="millisecond">Millisecond</option>
+      <option value="minute">Minute</option>
+      <option value="hour">Hour</option>
+      <option value="day">Day</option>
+      <option value="week">Week</option>
+      <option value="month">Month</option>
+      <option value="year">Year</option>
+      
+    </select>
+    <p id="timeResult" class="inputval">result</p>
+
+    
+  </div>
+  
+  <div class="sm-num">
+
+    <div class="row">
+      <button type="button" onclick="delalltime()" class="btn  utbn opr1">AC</button>
+      
+      <button type="button" onclick="deltime()"  class="btn utbn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+      <button type="button"   onclick="disti('00')"  class="btn utbn  opr ">00</button>
+      
+    </div>
+         
+
+      <div class="row">
+        <button type="button" onclick="disti('7')"   class="btn utbn ">7</button>
+        <button type="button"   onclick="disti('8')"   class=" btn utbn ">8</button>
+        <button type="button"  onclick="disti('9')"   class="btn utbn ">9</button>
+        
+      </div>
+
+
+      <div class="row">
+
+        <button type="button"   onclick="disti('4')"  class="btn utbn ">4</button>
+        <button type="button"  onclick="disti('5')"    class="btn utbn ">5</button>
+        <button type="button"  onclick="disti('6')"   class="btn utbn ">6</button>
+      
+        </div>
+  
+      
+        <div class="row">
+         
+          <button type="button"  onclick="disti('1')"    class="btn utbn ">1</button>
+            <button type="button"  onclick="disti('2')"    class="btn utbn ">2</button>
+            <button type="button"  onclick="disti('3')"   class="btn utbn ">3</button>
+            
+          </div>
+  
+        <div class="row">
+         
+             <button type="button" onclick="disti('0')"  class="btn utbn ">0</button>
+             <button type="button"  onclick="disti('.')"  class="btn utbn  opr">.</button>
+             <button type="button" onclick="convertTime()"  class="btn opr  utbn  eql">=</button>
+            
+        </div>
+        
+
+</div>
+
+ </div>
+
+ <!-- Weight Converter -->
+
+ <div class="weightcon unitconverter" id="weightconverter">
+  <i class="fa-solid fa-arrow-left back" onclick="hideweight()" id="goback" ></i>
+  
+  <div class="lc1"> 
+      <select class="linput1" id="fromWeightUnit" >
+
+                  <option value="gram">Gram</option>
+                    <option value="kilogram">Kilogram</option>
+                    <option value="milligram">Milligram</option>
+                    <option value="metricTon">Metric Ton</option>
+                    <option value="longTon">Long Ton</option>
+                    <option value="shortTon">Short Ton</option>
+                    <option value="pound">Pound</option>
+                    <option value="ounce">Ounce</option>
+                    <option value="carrat">Carat</option>
+     
+      <input type="text" id="weightInput" class="inputval" placeholder="input">
+
+    </select>
+
+  </div>
+
+  <div class="lc1 lc2"> 
+    <select class="linput2 " id="toWeightUnit">
+
+      <option value="gram">Gram</option>
+      <option value="kilogram">Kilogram</option>
+      <option value="milligram">Milligram</option>
+      <option value="metricTon">Metric Ton</option>
+      <option value="longTon">Long Ton</option>
+      <option value="shortTon">Short Ton</option>
+      <option value="pound">Pound</option>
+      <option value="ounce">Ounce</option>
+      <option value="carrat">Carat</option> 
+       
+    </select>
+    <p id="weightResult" class="inputval">result</p>
+
+    
+  </div>
+  
+  <div class="sm-num">
+
+    <div class="row">
+      <button type="button" onclick="delallwe()" class="btn  utbn opr1">AC</button>
+      
+      <button type="button" onclick="delwe()"  class="btn utbn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+      <button type="button"   onclick="diswe('00')"  class="btn utbn  opr ">00</button>
+      
+    </div>
+         
+
+      <div class="row">
+        <button type="button" onclick="diswe('7')"   class="btn utbn ">7</button>
+        <button type="button"   onclick="diswe('8')"   class=" btn utbn ">8</button>
+        <button type="button"  onclick="diswe('9')"   class="btn utbn ">9</button>
+        
+      </div>
+
+
+      <div class="row">
+
+        <button type="button"   onclick="diswe('4')"  class="btn utbn ">4</button>
+        <button type="button"  onclick="diswe('5')"    class="btn utbn ">5</button>
+        <button type="button"  onclick="diswe('6')"   class="btn utbn ">6</button>
+      
+        </div>
+  
+      
+        <div class="row">
+         
+          <button type="button"  onclick="diswe('1')"    class="btn utbn ">1</button>
+            <button type="button"  onclick="diswe('2')"    class="btn utbn ">2</button>
+            <button type="button"  onclick="diswe('3')"   class="btn utbn ">3</button>
+            
+          </div>
+  
+        <div class="row">
+         
+             <button type="button" onclick="diswe('0')"  class="btn utbn ">0</button>
+             <button type="button"  onclick="diswe('.')"  class="btn utbn  opr">.</button>
+             <button type="button" onclick="convertWeight()"  class="btn opr  utbn  eql">=</button>
+            
+        </div>
+        
+
+</div>
+
+ </div>
+
+
+<!-- Volume Converter -->
+
+ <div class="volumecon unitconverter" id="volumeconverter">
+  <i class="fa-solid fa-arrow-left back" onclick="hidevol()" id="goback" ></i>
+  
+  <div class="lc1"> 
+      <select class="linput1" id="fromVolumeUnit" >
+
+        <option value="cubicmeter">cubic meter</option>
+        <option value="cubiccentimeter">cubic centimeter</option>
+        <option value="cubicmilimeter">cubic milimeter</option>
+        <option value="acrefoot">acrefoot</option>
+        <option value="barrel">barrel</option>
+        <option value="cubicFoot">cubic Foot</option>
+        <option value="Gallon">Gallon</option>
+        <option value="Liter">Liter</option>
+     
+      <input type="text" id="volumeInput" class="inputval" placeholder="input">
+
+    </select>
+
+  </div>
+
+  <div class="lc1 lc2"> 
+    <select class="linput2 " id="toVolumeUnit">
+
+      <option value="cubicmeter">cubic meter</option>
+      <option value="cubiccentimeter">cubic centimeter</option>
+      <option value="cubicmilimeter">cubicmilimeter</option>
+      <option value="acrefoot">acrefoot</option>
+      <option value="barrel">barrel</option>
+      <option value="cubicFoot">cubic Foot</option>
+      <option value="Gallon">Gallon</option>
+      <option value="Liter">Liter</option>
+    
+    </select>
+    <p id="volumeResult" class="inputval">result</p>
+
+    
+  </div>
+  
+  <div class="sm-num">
+
+    <div class="row">
+      <button type="button" onclick="delallvol()" class="btn  utbn opr1">AC</button>
+      
+      <button type="button" onclick="delvol()" class="btn utbn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+      <button type="button"   onclick="disvl('00')"  class="btn utbn  opr ">00</button>
+      
+    </div>
+         
+
+      <div class="row">
+        <button type="button" onclick="disvl('7')"   class="btn utbn ">7</button>
+        <button type="button"   onclick="disvl('8')"   class=" btn utbn ">8</button>
+        <button type="button"  onclick="disvl('9')"   class="btn utbn ">9</button>
+        
+      </div>
+
+
+      <div class="row">
+
+        <button type="button"   onclick="disvl('4')"  class="btn utbn ">4</button>
+        <button type="button"  onclick="disvl('5')"    class="btn utbn ">5</button>
+        <button type="button"  onclick="disvl('6')"   class="btn utbn ">6</button>
+      
+        </div>
+  
+      
+        <div class="row">
+         
+          <button type="button"  onclick="disvl('1')"    class="btn utbn ">1</button>
+            <button type="button"  onclick="disvl('2')"    class="btn utbn ">2</button>
+            <button type="button"  onclick="disvl('3')"   class="btn utbn ">3</button>
+            
+          </div>
+  
+        <div class="row">
+         
+             <button type="button" onclick="disvl('0')"  class="btn utbn ">0</button>
+             <button type="button"  onclick="disvl('.')"  class="btn utbn  opr">.</button>
+             <button type="button" onclick="convertVolume()"  class="btn opr  utbn  eql">=</button>
+            
+        </div>
+        
+
+</div>
+
+ </div>
+ 
+ <!-- Pressure Converter -->
+ <div class="pressurecon unitconverter" id="pressureconverter">
+  <i class="fa-solid fa-arrow-left back" onclick="hidepr()" id="goback" ></i>
+  
+  <div class="lc1"> 
+      <select class="linput1" id="fromPressureUnit" >
+
+        <option value="newtonsqmeter">newton/sq.meter</option>
+        <option value="atmosphere">atmosphere</option>
+        <option value="bar">bar</option>
+        <option value="centimetermercury">centimeter mercury</option>
+        <option value="kgrforcesqmeter">kgr forcemeter</option>
+        <option value="millibar">millibar</option>
+        <option value="pascal">pascal</option>
+        <option value="kilopascal">kilopascal</option>
+        <option value="torr">torr</option>
+     
+      <input type="text" id="pressureInput" class="inputval" placeholder="input">
+
+    </select>
+
+  </div>
+
+  <div class="lc1 lc2"> 
+    <select class="linput2 " id="toPressureUnit">
+
+      <option value="newtonsqmeter">newton</option>
+      <option value="atmosphere">atmosphere</option>
+      <option value="bar">bar</option>
+      <option value="centimetermercury">centimetermercury</option>
+      <option value="kgrforcesqmeter">kgr force/sq.meter</option>
+      <option value="millibar">millibar</option>
+      <option value="pascal">pascal</option>
+      <option value="kilopascal">kilopascal</option>
+      <option value="torr">torr</option>
+      <!-- <input type="text" id="areaResult" class="inputval" placeholder="input"> -->
+      
+    </select>
+    <p id="pressureResult" class="inputval">result</p>
+
+    
+  </div>
+  
+  <div class="sm-num">
+
+    <div class="row">
+      <button type="button" onclick="delallpr() " class="btn  utbn opr1">AC</button>
+      
+      <button type="button" onclick="delpr()" class="btn utbn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+      <button type="button"   onclick="dispr('00')"  class="btn utbn  opr ">00</button>
+      
+    </div>
+         
+
+      <div class="row">
+        <button type="button" onclick="dispr('7')"   class="btn utbn ">7</button>
+        <button type="button"   onclick="dispr('8')"   class=" btn utbn ">8</button>
+        <button type="button"  onclick="dispr('9')"   class="btn utbn ">9</button>
+        
+      </div>
+
+
+      <div class="row">
+
+        <button type="button"   onclick="dispr('4')"  class="btn utbn ">4</button>
+        <button type="button"  onclick="dispr('5')"    class="btn utbn ">5</button>
+        <button type="button"  onclick="dispr('6')"   class="btn utbn ">6</button>
+      
+        </div>
+  
+      
+        <div class="row">
+         
+          <button type="button"  onclick="dispr('1')"    class="btn utbn ">1</button>
+            <button type="button"  onclick="dispr('2')"    class="btn utbn ">2</button>
+            <button type="button"  onclick="dispr('3')"   class="btn utbn ">3</button>
+            
+          </div>
+  
+        <div class="row">
+         
+             <button type="button" onclick="dispr('0')"  class="btn utbn ">0</button>
+             <button type="button"  onclick="dispr('.')"  class="btn utbn  opr">.</button>
+             <button type="button" onclick="convertPressure()"  class="btn opr  utbn  eql">=</button>
+            
+        </div>
+        
+
+</div>
+
+ </div>
+ 
+
+<!-- Power Converter -->
+
+ <div class="powercon unitconverter" id="powerconverter">
+  <i class="fa-solid fa-arrow-left back"  onclick="hidepw()" id="goback" ></i>
+  
+  <div class="lc1"> 
+      <select class="linput1" id="fromPowerUnit" >
+        <option value="watt">watt</option>
+        <option value="kilowatt">kilowatt</option>
+        <option value="megawatt">megawatt</option>
+        <option value="milliwatt">milliwatt</option>
+        <option value="footpoundforcesec">foot-pound force/sec</option>
+        <option value="horsepower">horsepower</option>
+        <option value="kilocalorie">kilocalorie</option>
+        <option value="caloriesec">caloriesec</option>
+        
+      <input type="text" id="powerInput" class="inputval" placeholder="input">
+
+    </select>
+
+  </div>
+
+  <div class="lc1 lc2"> 
+    <select class="linput2 " id="toPowerUnit">
+
+      <option value="watt">watt</option>
+        <option value="kilowatt">kilowatt</option>
+        <option value="megawatt">megawatt</option>
+        <option value="milliwatt">milliwatt</option>
+        <option value="footpoundforcesec">foot-pound force/sec</option>
+        <option value="horsepower">horsepower</option>
+        <option value="kilocalorie">kilocalorie</option>
+        <option value="caloriesec">calorie/sec</option>
+    
+    </select>
+    <p id="powerResult" class="inputval">result</p>
+
+    
+  </div>
+  
+  <div class="sm-num">
+
+    <div class="row">
+      <button type="button" onclick="delallpw()"  class="btn utbn opr1">AC</button>
+      
+      <button type="button" onclick="delpw()"  class="btn utbn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+      <button type="button"   onclick="dispw('00')"  class="btn utbn  opr ">00</button>
+      
+    </div>
+         
+
+      <div class="row">
+        <button type="button" onclick="dispw('7')"   class="btn utbn ">7</button>
+        <button type="button"   onclick="dispw('8')"   class=" btn utbn ">8</button>
+        <button type="button"  onclick="dispw('9')"   class="btn utbn ">9</button>
+        
+      </div>
+
+
+      <div class="row">
+
+        <button type="button"   onclick="dispw('4')"  class="btn utbn ">4</button>
+        <button type="button"  onclick="dispw('5')"    class="btn utbn ">5</button>
+        <button type="button"  onclick="dispw('6')"   class="btn utbn ">6</button>
+      
+        </div>
+  
+      
+        <div class="row">
+         
+          <button type="button"  onclick="dispw('1')"    class="btn utbn ">1</button>
+            <button type="button"  onclick="dispw('2')"    class="btn utbn ">2</button>
+            <button type="button"  onclick="dispw('3')"   class="btn utbn ">3</button>
+            
+          </div>
+  
+        <div class="row">
+         
+             <button type="button" onclick="dispw('0')"  class="btn utbn ">0</button>
+             <button type="button"  onclick="dispw('.')"  class="btn utbn  opr">.</button>
+             <button type="button" onclick="convertPower()"  class="btn opr  utbn  eql">=</button>
+            
+        </div>
+        
+
+</div>
+
+ </div>
+ 
+<!--  Length Converter -->
+
+  <div class="lengthconv unitconverter" id="lengthconverter">
+    <i class="fa-solid fa-arrow-left back" onclick="hideln()" id="goback" ></i>
+    
+    <div class="lc1"> 
+      <select class="linput1" id="fromLengthUnit" >
+
+                 <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>
+                    <option value="centimeter">Centimeter</option>
+                    <option value="millimeter">Millimeter</option>
+                    <option value="mile">Mile</option>
+                    <option value="yard">Yard</option>
+                    <option value="foot">Foot</option>
+                    <option value="inch">Inch</option>
+
+        <input type="text" id="lengthInput" class="inputval" placeholder="input">
+
+      </select>
+
+    </div>
+
+    <div class="lc1 lc2"> 
+      <select class="linput2 " id="toLengthUnit">
+    
+        <option value="meter">Meter</option>
+        <option value="kilometer">Kilometer</option>
+        <option value="centimeter">Centimeter</option>
+        <option value="millimeter">Millimeter</option>
+        <option value="mile">Mile</option>
+        <option value="yard">Yard</option>
+        <option value="foot">Foot</option>
+        <option value="inch">Inch</option>
+         
+      </select>
+      <p id="lengthResult" class="inputval">result</p>
+
+    </div>
+
+    <div class="sm-num">
+
+      <div class="row">
+        <button type="button" onclick="delallln()" class="btn  utbn opr1">AC</button>
+        
+        <button type="button" onclick="delln()" class="btn utbn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+        <button type="button"   onclick="dis('00')"  class="btn utbn  opr ">00</button>
+        
+      </div>
+           
+
+        <div class="row">
+          <button type="button" onclick="show('7')"   class="btn utbn ">7</button>
+          <button type="button"   onclick="show('8')"   class=" btn utbn ">8</button>
+          <button type="button"  onclick="show('9')"   class="btn utbn ">9</button>
+          
+        </div>
+
+
+        <div class="row">
+
+          <button type="button"   onclick="show('4')"  class="btn utbn ">4</button>
+          <button type="button"  onclick="show('5')"    class="btn utbn ">5</button>
+          <button type="button"  onclick="show('6')"   class="btn utbn ">6</button>
+         
+         
+          
+   
+          </div>
+    
+        
+          <div class="row">
+           
+            <button type="button"  onclick="dis('1')"    class="btn utbn ">1</button>
+              <button type="button"  onclick="dis('2')"    class="btn utbn ">2</button>
+              <button type="button"  onclick="dis('3')"   class="btn utbn ">3</button>
+              
+         
+            </div>
+    
+          <div class="row">
+           
+           
+               <button type="button" onclick="dis('0')"  class="btn utbn ">0</button>
+               <button type="button"  onclick="dis('.')"  class="btn utbn  opr">.</button>
+               <button type="button"  onclick="convertLength()" class="btn opr  utbn  eql">=</button>
+              
+          </div>
+          
+
+  </div>
+
+  
+   </div>
+
+   <!-- Sip Calculator -->
+
+        <div class="sipcalculate unitconverter" id="sipcalculator">
+          <i class="fa-solid fa-arrow-left back" onclick="hidesip()" id="goback" ></i>
+          <div class="spi-cal1">
+          <div class="sipcal">
+  
+          <div class=" input-container spi-container "onclick="disspiamount()">
+             
+            <label for="sipamount" >  Amount Invested</label>
+            <input type="range" max="500000" min="100" value="100" class="sipslider accent ">
+            <input   type="number" id="sipamount"   class="sipinput"  required /> 
+             
+           </div>
+         
+           <div class="input-container spi-container " onclick="disspirate()">
+             
+            <label for="rate" >Rate Of Return % </label>
+            <input type="range" max="500" min="1" value="1" class="sipsliderrate accent ">
+            <input   type="number" id="rate" class="sipinput"  required/> 
+  
+           </div>
+  
+           <div class=" input-container spi-container "  onclick="disspiyears()">
+             
+            <label for="years" >Duration Years  </label>
+            <input type="range" max="100" min="1" value="1" class="sipslideryears accent ">
+            <input   type="number" id="years"  class="sipinput"   required/>
+  
+           </div>
+          </div>
+
+          <div class="emidiv">
+            <button  id="sipcalculate"  onclick="calculateSIP()"class="calculatebtn"> calculate  </button>
+            <button id="sipreset" class="resetbtn" onclick="sipreset()"> reset</button>
+          </div>
+  
+          <div class="output sipoutput">
+            <div class="SIPPARA para"> <p> Total amount<span id="amountI"> ₹ </span></p></div>
+            <div class="para SIPPARA"> <p> Future Amount <span id="futureValue"> ₹   </span></p></div>  
+  
+          </div>
+          </div>
+
+
+      </div>
+   
+      <!-- Emi Calculator -->
+
+    <div class="emicalculator unitconverter" id="emical">
+      <i class="fa-solid fa-arrow-left back" onclick="hideemi()" id="goback" ></i>
+    
+      <div  class="emi-cal">
+        <div class="emi-con1">
+
+        <div class="input-container">
+       
+          <label for="amount">Loan Amount(₹)   </label>
+      
+           <input type="range" max="50000" min="1000" value="1000" class="slider accent ">
+          <input class="amountvalue"  type="number" id="amount" />
+
+         </div>
+
+         <div class="input-container">
+           
+          <label for="interest">Interest Rate(%)</label>
+
+           <input type="range" max="500" min="1" value="1" class="sliderrate accent ">
+      
+         <input class="amountvalue" type="number"   id="interest" />
+         </div>
+          
+         <div class="input-container loan-tenure-container">
+           
+          <label for="loantenure">Loan Tenure</label>
+           
+           <input type="range" max="500" min="1" value="1" class="slideryears accent ">
+          <input class="amountvalue" type="number" id="loantenure" />
+
+            <div class="radio-container">
+            <input type="radio" name="btn" id="year"><label for="year">Year</label>
+            <input type="radio" name="btn" id="month"><label for="month">Month</label> </div> 
+
+
+         </div>
+         </div>
+         
+         <div class="emidiv">
+          <button  id="calculate" class="calculatebtn"> calculate  </button>
+          <button id="reset" class="resetbtn" onclick="emireset()"> reset</button>
+        </div>
+
+     <div class="output output-emi">
+      <div class="para"> <p> Loan EMI<span id="emi"> ₹ </span></p></div>
+      <div class="para"> <p> Total Interest  <span id="totalinterest"> ₹   </span></p></div>
+        <div class="para"><p> Total Payment <span id="totalpayment">₹  </span></p></div>   
+      
+    </div>
+    
+  </div>
+      
+   </div>
+
+
+   <div class="discountcal unitconverter" id="discountcalculator">
+    <i class="fa-solid fa-arrow-left back" onclick="hidediscount()" id="goback" ></i>
+    <div class="dis-cal1">
+   
+
+    <div class=" input-container dis-container "onclick="disdcoamount()">
+       
+      <label for="bill-amount" >Bill Amount:</label>
+      <input   type="number" id="bill-amount" class="disinput"   required /> 
+       
+     </div>
+   
+     <div class="input-container dis-container ">
+       
+      <label for="discount_per" >Select Discount % </label>
+       <select   name="percentage" id="discount_per">
+         <option value="0">0</option>
+         <option value="10">5</option>
+         <option value="0">10</option>
+         <option value="10">15</option>
+         <option value="0">20</option>
+         <option value="10">25</option>
+         <option value="0">30</option>
+         <option value="10">50</option>
+         <option value="0">70</option>
+         <option value="10">75</option>
+         <option value="0">90</option>
+         <option value="10">100</option>
+       
+        
+       </select> 
+
+     </div>
+
+     </div>
+
+     <div class="dis-cal1">
+
+     <div class=" input-container dis-container">
+       
+      <label for="discount-amount" >Discount Amount: </label>
+      <input   type="number" id="discount-amount"  class="disinput"   required/> 
+
+    
+     </div>
+
+     <div class=" input-container dis-container ">
+       
+      <label for="pay" >Final Pay: </label>
+      <input   type="number" id="pay"   class="disinput"  required/> 
+
+    
+     </div>
+
+    
+
+    
+    </div>
+
+    <div class="sm-num sm-num1 disdiv">
+ 
+      <div class="row">
+        <button type="button"  onclick="redic()"  class="btn   sbtn opr1">AC</button>
+        
+        <button type="button" onclick="remdic()" class="btn  sbtn opr1"><i class="fa-solid fa-delete-left delicon"></i></button>
+        <button type="button" class="btn utbn  sbtn ">00</button>
+        
+      </div>
+           
+
+        <div class="row">
+          <button type="button"  class="btn  sbtn ">7</button>
+          <button type="button" class=" btn  sbtn ">8</button>
+          <button type="button" class="btn   sbtn" sbtn>9</button>
+          
+        </div>
+
+
+        <div class="row">
+
+          <button type="button" class="btn  sbtn ">4</button>
+          <button type="button"  class="btn  sbtn ">5</button>
+          <button type="button"  class="btn  sbtn">6</button>
+         
+         
+          
+   
+          </div>
+    
+        
+          <div class="row">
+           
+            <button type="button" class="btn utbn sbtn ">1</button>
+              <button type="button" class="btn utbn sbtn ">2</button>
+              <button type="button" class="btn utbn sbtn ">3</button>
+              
+         
+            </div>
+    
+          <div class="row">
+           
+           
+               <button type="button" class="btn utbn  sbtn">0</button>
+               <button type="button" class="btn utbn sbtn">.</button>
+               <button type="button"  id="caldis"  class="btn sbtn  utbn  eql">=</button>
+              
+          </div>
+          
+
+        </div>
+  
+
+  </div>
+  
+               
+    
+
+   
+  <script src="script.js"></script>
+
+</body>
+</html>
